@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
     />
+    <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
   </head>
   <body>
     <ion-app>
@@ -41,15 +42,12 @@
                     <ion-label position="floating">Expense Amount</ion-label>
                     <ion-input type="number" id="input-amount"></ion-input>
                   </ion-item>
-                  <div
-                    class="ion-margin-vertical ion-text-right"
-                    id="btn-cancel"
-                  >
+                  <div class="ion-margin-vertical ion-text-right">
                     <ion-button color="primary" id="btn-confirm">
                       <ion-icon slot="start" name="add"></ion-icon>Add
                       Expense</ion-button
                     >
-                    <ion-button fill="outline" color="danger">
+                    <ion-button fill="outline" color="danger" id="btn-cancel">
                       <ion-icon slot="start" name="close"></ion-icon
                       >Clear</ion-button
                     >
@@ -63,8 +61,14 @@
               <ion-list id="expenses-list"></ion-list>
             </ion-col>
           </ion-row>
+          <ion-row>
+            <ion-col>
+              <p>Total Expenses: <span id="total-expenses"></span></p>
+            </ion-col>
+          </ion-row>
         </ion-grid>
       </ion-content>
+      <ion-alert-controller></ion-alert-controller>
     </ion-app>
     <script src="app.js"></script>
   </body>
